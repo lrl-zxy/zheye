@@ -1,19 +1,43 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="container">
+    <ColumnList :list="testData" />
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    
-    HelloWorld
-  }
-})
+<script setup lang="ts">
+import { reactive } from "vue";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ColumnList, { ColumnProps } from "./components/ColumnList/index.vue";
+const testData: ColumnProps[] = reactive([
+  {
+    id: 1,
+    title: "test01",
+    avatar:
+      "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+    description: "我就是测试",
+  },
+  {
+    id: 2,
+    title: "test01",
+    // avatar:
+    //   "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+    description: "我就是测试",
+  },
+  {
+    id: 3,
+    title: "test01",
+    avatar:
+      "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+    description: "我就是测试",
+  },
+  {
+    id: 3,
+    title: "test01",
+    avatar:
+      "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+    description: "我就是测试",
+  },
+]);
 </script>
 
 <style>
