@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <GlobalHeader :user="user"/>
     <ColumnList :list="testData" />
   </div>
 </template>
@@ -8,6 +9,13 @@
 import { reactive } from "vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ColumnList, { ColumnProps } from "./components/ColumnList/index.vue";
+import GlobalHeader,{UserProps} from "@/components/GlobalHeader/index.vue";
+const user:UserProps={
+  isLogin:true,
+  name:'张三',
+  id:1,
+  nickName:'张三'
+}
 const testData: ColumnProps[] = reactive([
   {
     id: 1,
